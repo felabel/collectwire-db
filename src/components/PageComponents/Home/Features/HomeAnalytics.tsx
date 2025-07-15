@@ -42,7 +42,7 @@ const analyticsData: MetricCardProps[] = [
 
 export function HomeAnalytics() {
   return (
-    <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <section className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {analyticsData.map((data, index) => (
         <MetricCard
           key={index} // Using index as key is generally okay for static lists
@@ -67,7 +67,7 @@ function MetricCard({ title, value, isCurrency }: MetricCardProps) {
       <CardContent className="p-0">
         <p
           className={cn(
-            "m-0 p-0 leading-none text-[28px] lg:text-[36px] xl:text-[42px] font-semibold text-cwg-darkgreen "
+            "m-0 p-0 leading-none text-[24px] lg:text-[28px] xl:text-[42px] font-semibold text-cwg-darkgreen "
           )}
         >
           {value}
