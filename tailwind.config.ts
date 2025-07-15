@@ -21,7 +21,6 @@ const config: Config = {
       },
       colors: {
         // Custom CollectWire Dashboard Colors
-        "sidebar-bg": "hsl(var(--sidebar-bg))",
         "sidebar-active": "hsl(var(--sidebar-active))",
         "text-primary": "hsl(var(--text-primary))",
         "text-secondary": "hsl(var(--text-secondary))",
@@ -34,13 +33,14 @@ const config: Config = {
         "cwg-05": "hsl(var(--cwg-05))",
         "cwg-06": "hsl(var(--cwg-06))",
         "cwg-darkgreen": "hsl(var(--cwg-darkgreen))",
-        "text-darkgreen": "hsl(var(--text-darkgreen))", // Duplicate name, consider if this is intended
         "cwg-08": "hsl(var(--cwg-08))",
         "cwg-04": "hsl(var(--cwg-04))",
         "cwg-01": "hsl(var(--cwg-01))",
         "cwg-02": "var(--cwg-02)",
         "cwg-07": "var(--cwg-07)",
         "main-bg": "hsl(var(--main-bg))",
+        'gradient-fill-green': 'hsl(var(--gradient-fill-green))',
+
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

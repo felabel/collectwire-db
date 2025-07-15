@@ -43,14 +43,14 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-[287px] flex-col bg-sidebar-bg text-white shadow-xl transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:shadow-none",
+          "fixed inset-y-0 left-0 z-50 flex w-full md:w-[320px] lg:w-[287] flex-col bg-cwg-darkgreen text-white shadow-xl transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:shadow-none",
           {
             "translate-x-0": isOpen,
             "-translate-x-full": !isOpen && isMobileOrTablet,
           }
         )}
       >
-        <div className="flex items-center justify-between px-[32px] py-[56px] border-sidebar-active lg:justify-center">
+        <div className="flex items-center justify-between px-[32px] py-[32px] lg:py-[56px] border-sidebar-active lg:justify-center">
           <Link href="/" className="flex items-center gap-4">
             <Image
               src={profile}
@@ -70,7 +70,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             </div>
           </Link>
           {isMobileOrTablet && (
-            <button onClick={onClose} className="text-white lg:hidden">
+            <button
+              onClick={onClose}
+              className="text-white lg:hidden -mt-[1.2rem]"
+            >
               <X size={24} />
             </button>
           )}

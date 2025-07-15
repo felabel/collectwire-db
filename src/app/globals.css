@@ -52,11 +52,10 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-  --sidebar-bg: 116 100% 8%;    /* #032900 */
   --sidebar-active: 86 32% 19%; /* #344222 */
   --text-primary: 0 0% 20%;     /* #333333 */
   --text-secondary: 0 0% 40%;   /* #666666 */
-  --border-light: 0 0% 88%;     /* #E0E0E0 */
+  --border-light: 84 15% 82%;     /* #E0E0E0 */
   --graph-green-light: 91 76% 86%; /* #D9F7BE */
   --graph-green-dark: 86 67% 51%;  /* #8CC63F */
   
@@ -64,13 +63,14 @@
 --cwg-05: 90 4% 48%;       /* #7A8075 */
 --cwg-06: 110 4% 47%;      /* #748073 */
 --cwg-darkgreen: 116 100% 8%; /* #032900 */
---text-darkgreen: 116 100% 8%; /* #032900 */
 --cwg-08: 90 3% 24%;       /* #394039 */
 --cwg-04: 90, 8%, 73%   ;    /* #394039 */
 --main-bg: 230,3.95%,70.2%;
 --cwg-01: 84,24%,96%;
 --cwg-02: #DFE5DA;
 --cwg-07: #586657;
+  --gradient-fill-green: 86 85% 60%;
+
 
   }
   .dark {

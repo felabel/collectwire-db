@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export function Navbar({ onMenuClick }: NavbarProps) {
   return (
-    <nav className="flex py-[56px] items-center justify-between bg-white px-4 shadow-sm lg:px-8">
+    <nav className="flex py-[32px] lg:py-[56px] items-center justify-between bg-white px-4 shadow-sm lg:px-8">
       <Button
         variant="ghost"
         size="icon"
