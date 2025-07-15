@@ -67,7 +67,7 @@ function MetricCard({ title, value, isCurrency }: MetricCardProps) {
       <CardContent className="p-0">
         <p
           className={cn(
-            "m-0 p-0 leading-none text-[32px] lg:text-[41px] font-semibold text-cwg-darkgreen "
+            "m-0 p-0 leading-none text-[28px] lg:text-[36px] xl:text-[42px] font-semibold text-cwg-darkgreen "
           )}
         >
           {value}

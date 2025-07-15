@@ -82,7 +82,7 @@ function CountryCard({ title, data }: CountryCardProps) {
               </div>
               <div className="flex w-full items-center ">
                 <div
-                  className=" h-2 rounded-full bg-cwg-02"
+                  className="h-2 rounded-full bg-cwg-02 transition-all duration-500 ease-out" // Added transition classes
                   style={{ width: `${(country.count / MAX_COUNT) * 100}%` }}
                 ></div>
                 <span className=" text-sm font-medium text-text-secondary pl-2">
