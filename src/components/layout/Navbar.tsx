@@ -22,7 +22,6 @@ export function Navbar({ onMenuClick }: NavbarProps) {
       <h1 className="text-[24px] md:text-[32px] font-medium text-text-primary">
         Good morning, Sophia
       </h1>
-      {/* Right side: Notification and Avatar */}
       <div className="flex items-center space-x-4 border border-cwg-04 rounded-full">
         <Button variant="ghost" size="icon" className="text-gray-700">
           <Bell size={20} />
