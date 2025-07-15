@@ -19,9 +19,9 @@ export const VerifiedIcon = ({
     <path
       d="M8.95402 5.75L5.89152 8.8125L4.375 7.28125"
       stroke="#B1EF41"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
