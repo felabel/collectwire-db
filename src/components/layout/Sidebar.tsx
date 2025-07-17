@@ -1,36 +1,61 @@
-// src/components/layout/Sidebar.tsx
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from "next/navigation";
+import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-import {
-  LayoutDashboard,
-  CreditCard,
-  Building,
-  Users,
-  X, // Close icon
-  Menu, // Menu icon
-} from "lucide-react";
-import { cn } from "@/lib/utils"; // Assuming you have a cn utility for class merging
-
-import profile from "@/assets/profile.svg"; // Adjust the path as necessary
+import profile from "@/assets/profile.svg";
 import { VerifiedIcon } from "../icons/VerifiedIcon";
+import { DashboardIcon } from "../icons/DashboardIcon";
+import { BusinessIcon } from "../icons/BusinessIcon";
+import { WalletIcon } from "../icons/WalletIcon";
+import { UserIcon } from "../icons/UserIcon";
+
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 1023px)" }); // Tailwind's 'lg' breakpoint is 1024px
+  const pathname = usePathname();
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 1023px)" });
 
   useEffect(() => {
     if (!isMobileOrTablet && isOpen) {
       onClose();
     }
   }, [isMobileOrTablet, isOpen, onClose]);
+
+  const navLinks = [
+    {
+      icon: DashboardIcon,
+      text: "Dashboard",
+      href: "/",
+      isActive: pathname === "/",
+    },
+    {
+      icon: WalletIcon,
+      text: "Payments",
+      href: "/payment",
+      isActive: pathname.startsWith("/payment"),
+    },
+    {
+      icon: BusinessIcon,
+      text: "Businesses",
+      href: "/businesses",
+      isActive: pathname.startsWith("/businesses"),
+    },
+    {
+      icon: UserIcon,
+      text: "Employees",
+      href: "/employees",
+      isActive: pathname.startsWith("/employees"),
+    },
+  ];
 
   return (
     <>
@@ -43,7 +68,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-full md:w-[320px] lg:w-[287] flex-col bg-cwg-darkgreen text-white shadow-xl transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:shadow-none",
+          "fixed inset-y-0 left-0 z-50 flex w-full md:w-[320px] lg:w-[287px] flex-col bg-cwg-darkgreen text-white shadow-xl transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:shadow-none",
           {
             "translate-x-0": isOpen,
             "-translate-x-full": !isOpen && isMobileOrTablet,
@@ -80,15 +105,15 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
 
         <nav className="flex-1 px-[32px] space-y-3">
-          <SidebarLink
-            icon={LayoutDashboard}
-            text="Dashboard"
-            href="/"
-            isActive
-          />
-          <SidebarLink icon={CreditCard} text="Payments" href="/" />
-          <SidebarLink icon={Building} text="Businesses" href="/" />
-          <SidebarLink icon={Users} text="Employees" href="/" />
+          {navLinks.map((item, index) => (
+            <SidebarLink
+              icon={item.icon}
+              text={item.text}
+              href={item.href}
+              isActive={item.isActive}
+              key={index}
+            />
+          ))}
         </nav>
       </aside>
     </>
@@ -113,8 +138,8 @@ function SidebarLink({ icon: Icon, text, href, isActive }: SidebarLinkProps) {
           : "text-cwg-05 hover:bg-sidebar-active hover:text-white01"
       )}
     >
-      <Icon size={20} />
-      <span>{text}</span>
+      <Icon size={20} stroke={isActive ? "white" : "currentColor"} />
+      <span className="mt-[4px]">{text}</span>
     </Link>
   );
 }

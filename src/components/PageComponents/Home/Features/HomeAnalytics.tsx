@@ -1,15 +1,11 @@
-// src/components/home/HomeAnalytics.tsx
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; // Import Shadcn Card components
-import { cn } from "@/lib/utils"; // Utility for merging Tailwind classes
-
-// Define the interface for a single metric card
+import { cn } from "@/lib/utils";
 interface MetricCardProps {
   title: string;
   value: string;
-  isCurrency?: boolean; // Optional prop to indicate if the value is currency
+  isCurrency?: boolean;
 }
 
-// Array containing the data for each of the six metric cards
 const analyticsData: MetricCardProps[] = [
   {
     title: "Total Businesses",
@@ -45,7 +41,7 @@ export function HomeAnalytics() {
     <section className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {analyticsData.map((data, index) => (
         <MetricCard
-          key={index} // Using index as key is generally okay for static lists
+          key={index}
           title={data.title}
           value={data.value}
           isCurrency={data.isCurrency}
@@ -55,7 +51,6 @@ export function HomeAnalytics() {
   );
 }
 
-// Helper component for individual metric cards
 function MetricCard({ title, value, isCurrency }: MetricCardProps) {
   return (
     <Card className="rounded-lg border-none bg-cwg-01 p-4 lg:p-8 shadow-sm">

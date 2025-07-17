@@ -1,14 +1,11 @@
-// src/components/home/CountriesAnalytics.tsx
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
-import usa from "@/assets/usa.svg"; // Adjust the path as necessary
+import usa from "@/assets/usa.svg";
 import nigeria from "@/assets/nigeria.svg";
-import japan from "@/assets/japan.svg"; // Assuming these are the correct paths for the flags
+import japan from "@/assets/japan.svg";
 import france from "@/assets/france.svg";
 import jamaica from "@/assets/jamaica.svg";
 
@@ -28,7 +25,6 @@ const businessCountriesData: CountryData[] = [
   { flag: jamaica, name: "Jamiaca", count: 7 },
 ];
 
-// Data for Employee Countries (looks identical in the screenshot, so reusing structure)
 const employeeCountriesData: CountryData[] = [
   { flag: usa, name: "USA", count: 16 },
   { flag: nigeria, name: "Nigeria", count: 12 },
@@ -82,7 +78,7 @@ function CountryCard({ title, data }: CountryCardProps) {
               </div>
               <div className="flex w-full items-center ">
                 <div
-                  className="h-2 rounded-full bg-cwg-02 transition-all duration-500 ease-out" // Added transition classes
+                  className="h-2 rounded-full bg-cwg-02 transition-all duration-500 ease-out"
                   style={{ width: `${(country.count / MAX_COUNT) * 100}%` }}
                 ></div>
                 <span className=" text-sm font-medium text-text-secondary pl-2">

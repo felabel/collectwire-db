@@ -1,7 +1,5 @@
-// src/components/layout/Navbar.tsx
 import { Bell, Menu } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Assuming Shadcn Avatar
-import { Button } from "@/components/ui/button"; // Assuming Shadcn Button
+import { Button } from "@/components/ui/button"; 
 
 interface NavbarProps {
   onMenuClick: () => void;

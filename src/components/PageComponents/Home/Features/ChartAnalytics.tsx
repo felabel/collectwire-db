@@ -3,7 +3,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar as CalendarIcon, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 import {
   AreaChart,
@@ -12,7 +11,6 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  ReferenceLine,
   CartesianGrid,
 } from "recharts";
 
@@ -85,47 +83,47 @@ export function ChartAnalytics() {
 
               <XAxis
                 dataKey="name"
-                axisLine={false} // No axis line
-                tickLine={false} // No tick marks
-                tick={{ fill: "hsl(var(--text-secondary))", fontSize: 12 }} // Custom tick color and size
+                axisLine={false}
+                tickLine={false}
+                tick={{ fill: "hsl(var(--text-secondary))", fontSize: 12 }}
                 interval={0}
-                tickMargin={10} // Space between ticks and axis
+                tickMargin={10}
               />
-              {/* Y-Axis (Values) */}
+
               <YAxis
-                axisLine={false} // No axis line
-                tickLine={false} // No tick marks
+                axisLine={false}
+                tickLine={false}
                 tickFormatter={(value) =>
                   value === 0 ? "0" : `${value / 1000}k`
-                } // Format as 0, 1k, 2k, 3k
-                tick={{ fill: "hsl(var(--text-secondary))", fontSize: 12 }} // Custom tick color and size
+                }
+                tick={{ fill: "hsl(var(--text-secondary))", fontSize: 12 }}
                 orientation="left"
                 tickMargin={5}
                 ticks={[0, 1000, 2000, 3000]}
               />
-              {/* Tooltip */}
+
               <Tooltip
-                content={<CustomTooltip />} // Use our custom tooltip component
+                content={<CustomTooltip />}
                 cursor={{
-                  stroke: "hsl(var(--cwg-darkgreen))", // Cursor line color
+                  stroke: "hsl(var(--cwg-darkgreen))",
                   strokeWidth: 1,
                 }}
               />
-              {/* Area Chart */}
+
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke="hsl(var(--cwg-darkgreen))" // Line color
+                stroke="hsl(var(--cwg-darkgreen))"
                 strokeWidth={2}
-                fill="url(#colorValue)" // Fill with gradient
+                fill="url(#colorValue)"
                 activeDot={{
                   r: 4,
                   fill: "hsl(var(--cwg-darkgreen))",
                   stroke: "hsl(var(--cwg-darkgreen))",
                   strokeWidth: 2,
-                }} // Dot on hover
+                }}
               />
-              {/* Gradient Definition for Area Fill */}
+
               <defs>
                 <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                   <stop
@@ -140,23 +138,6 @@ export function ChartAnalytics() {
                   />
                 </linearGradient>
               </defs>
-
-              {/* Reference Line for "Sept" */}
-              {/* {septData && (
-                <ReferenceLine
-                  x="Sept" // Data key for the x-axis where the line should be
-                  stroke="hsl(var(--cwg-darkgreen))" // Dark green line
-                  strokeWidth={2}
-                  label={{
-                    value: "Sept",
-                    position: "bottom",
-                    fill: "hsl(var(--cwg-darkgreen))",
-                    fontSize: 12,
-                    dy: 10, // Adjust vertical position of the label
-                    fontWeight: "bold",
-                  }}
-                />
-              )} */}
             </AreaChart>
           </ResponsiveContainer>
         </div>
