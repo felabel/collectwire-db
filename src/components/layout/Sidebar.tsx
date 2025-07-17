@@ -24,7 +24,6 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 1023px)" });
 
-  console.log("pathname", pathname);
   useEffect(() => {
     if (!isMobileOrTablet && isOpen) {
       onClose();
@@ -41,19 +40,19 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     {
       icon: WalletIcon,
       text: "Payments",
-      href: "/payment",
+      href: "/",
       isActive: pathname.startsWith("/payment"),
     },
     {
       icon: BusinessIcon,
       text: "Businesses",
-      href: "/businesses",
+      href: "/",
       isActive: pathname.startsWith("/businesses"),
     },
     {
       icon: UserIcon,
       text: "Employees",
-      href: "/employees",
+      href: "/",
       isActive: pathname.startsWith("/employees"),
     },
   ];
