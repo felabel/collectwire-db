@@ -9,6 +9,24 @@ const leagueSpartan = League_Spartan({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   title: "Collectwire Dashboard",
   description: "Dashboard for managing your Collectwire account",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: [
+    "Collectwire",
+    "dashboard",
+    "payroll",
+    "analytics",
+    "backoffice",
+    "hr",
+  ],
+  authors: [{ name: "Collectwire" }],
+  creator: "Collectwire Team",
+  publisher: "Collectwire",
+  formatDetection: {
+    telephone: false,
+  },
+  robots: "noindex, nofollow",
 };
 
 export default function RootLayout({

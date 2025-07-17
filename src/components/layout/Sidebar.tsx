@@ -24,6 +24,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
   const isMobileOrTablet = useMediaQuery({ query: "(max-width: 1023px)" });
 
+  console.log("pathname", pathname);
   useEffect(() => {
     if (!isMobileOrTablet && isOpen) {
       onClose();
